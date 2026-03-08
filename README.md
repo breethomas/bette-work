@@ -1,250 +1,124 @@
-# PM Coding Guardrails !
+# PM AI Playbook
 
-Coding standards and quality gates for product managers working with AI assistants in shared codebases.
+A practical system for product managers working with AI assistants — whether you're coding, writing strategy docs, or building products.
 
 ## The Problem
 
-PMs using AI to code face a unique challenge: shipping value quickly while not creating cleanup work for engineering teams. AI-assisted coding can be incredibly productive, but without guardrails, it often results in:
+PMs using AI to build face a unique challenge: shipping quality work while respecting team standards and maintaining continuity across sessions. AI-assisted work can be incredibly productive, but without a system, it results in:
 
-- PRs that fail CI/CD
-- Code that doesn't match team patterns
-- Tech debt that slows down the team
-- Frustrated engineers cleaning up after you
+- Lost context between sessions (re-explaining the same things)
+- Inconsistent quality (great output one session, sloppy the next)
+- PRs that fail CI/CD (for coding work)
+- Duplicated effort (solving the same problems repeatedly)
 
 ## The Solution
 
-A set of practical guidelines for PMs to code responsibly with AI assistance, whether working solo or in shared codebases with senior engineers.
+A layered playbook that scales from "I just started using AI" to "AI is my daily operating system."
 
 ## What's Inside
 
-**[pm-who-codes.md](pm-who-codes.md)** - Core philosophy and principles
+### Core (All AI-Assisted Work)
+
+**[core-principles.md](core-principles.md)** — Universal principles and maturity model
+- The maturity model: ad hoc → planned → systematic → optimized
+- Documentation-first, checkpointing, planning in phases
+- Session management (avoiding context rot)
+- The 6-month test, lean thinking, discover before building
+
+### Coding
+
+**[coding/quality-gates.md](coding/quality-gates.md)** — Pre-commit checklist and PM-who-codes philosophy
+- Pattern matching, CI/CD readiness, code review standards
 - Role clarity: PM who codes vs. software engineer
-- Working in shared codebases respectfully
-- Task breakdown and documentation-first approach
-- When to ask vs. when to ship
+- Team vs. solo codebase expectations
 
-**[quality-gates.md](quality-gates.md)** - Pre-commit checklist
-- What to check before every commit
-- Checkpoint strategy for frequent commits
-- How to initialize coding sessions with AI
-- CI/CD readiness standards
-- Prompt engineering checklist for AI prompt modifications
+**[coding/test-first.md](coding/test-first.md)** — AI-generated safety nets
+- Generate test suites from existing behavior before modifying code
+- The highest-leverage use of AI in coding
 
-**[prompt-engineering.md](prompt-engineering.md)** - Prompt optimization framework
-- The 6-step optimization framework for production prompts
-- Battle-tested production prompt template
-- The 3 fatal mistakes (and how to avoid them)
-- Dependent operation pattern for tool-calling AI
-
-**[solo-project-standards.md](solo-project-standards.md)** - Standards for solo projects
+**[coding/solo-projects.md](coding/solo-projects.md)** — Standards for solo projects
 - Keep it simple, lean, and maintainable
-- The 6-month test (will future you understand this?)
-- When to test, when to document
-- Pre-ship checklist
+- When to test, when to document, pre-ship checklist
 
-**[session-management.md](session-management.md)** - Managing context and continuity
-- When to restart sessions (avoiding context rot)
-- How to document your work before restarting
-- Where to save session notes (team vs. solo)
-- Starting fresh sessions without losing context
+**[coding/prompt-engineering.md](coding/prompt-engineering.md)** — Production prompt optimization
+- The 6-step optimization framework
+- Battle-tested production prompt template
+- The 3 fatal mistakes and dependent operation patterns
+
+### Patterns
+
+**[patterns/](patterns/)** — Capture and reuse solved problems
+- How to build a pattern library that compounds over time
+- Pattern format and integration with AI context files
+
+### Integration
+
+**[skill.md](skill.md)** — Skill definition for AI operating systems
+- Auto-trigger configuration for Claude Code / Bette OS
+- What to load and when
+
+## The Maturity Model
+
+| Level | What It Looks Like | Focus |
+|-------|-------------------|-------|
+| **Ad Hoc** | Prompting AI, accepting output, hoping it works | Establish session management and context files |
+| **Planned** | Guardrails exist, session notes capture state, quality gates define "done" | Build verification into workflow |
+| **Systematic** | Test suites, captured patterns, phased plans with dependencies | AI proactively suggests improvements |
+| **Optimized** | AI manages routine execution within guardrails, you focus on decisions | Living system that improves each session |
 
 ## Who This Is For
 
 - **PMs learning to code** with AI assistance
-- **PMs working in shared codebases** with engineering teams
-- **Product builders** who want to ship responsibly with maintainable code
-- **Anyone using AI to code** who wants to avoid sloppy code that fails CI or doesn't match patterns
+- **PMs writing strategy** with AI as thought partner
+- **Product builders** shipping with AI across coding and non-coding work
+- **Founders** doing everything — CEO, product, engineering — with AI as force multiplier
+- **Anyone working with AI** who wants a system, not just prompts
 
 ## How to Use
 
 ### Option 1: Integrate with Claude Code
 
-**Add to your context files:**
-
-These files work with any Claude Code setup. Choose what works for you:
-
-**A) Global context** - Available in all projects:
-```bash
-# Add to your global Claude directory
-cp *.md ~/.claude/
-```
-
-**B) Project-specific context** - For a specific codebase:
-```bash
-# Add to your project's .claude directory
-cp *.md /path/to/your-project/.claude/
-```
-
-**C) Reference in instructions:**
-
-In your CLAUDE.md or project instructions, reference these guidelines:
+Reference in your CLAUDE.md:
 
 ```markdown
-## Coding Standards
+## Working Standards
 
-When working on code:
-- Follow pm-who-codes.md for philosophy and approach
-- Use quality-gates.md checklist before every commit
-- Apply solo-project-standards.md for solo projects
-- Use session-management.md to maintain continuity across sessions
+At the start of any session, load the PM AI Playbook:
+- Read core-principles.md for universal working principles
+
+For coding sessions, also load:
+- Read coding/quality-gates.md for pre-commit standards
+- Read coding/test-first.md for the test-first pattern
 ```
 
 ### Option 2: Use as Reference
 
-Keep these files open while coding and review as needed:
-- Before starting: Read pm-who-codes.md
-- Before committing: Check quality-gates.md
-- For solo projects: Follow solo-project-standards.md
-- After 2-3 tasks: Follow session-management.md to restart
+- Before starting any sustained work: Read core-principles.md
+- Before committing code: Check coding/quality-gates.md
+- Before modifying existing code: Review coding/test-first.md
+- After solving a hard problem: Capture it in patterns/
 
-### Option 3: Customize for Your Team
+### Option 3: Customize for Your Setup
 
-Fork this repo and adapt the guidelines to your team's:
-- Specific tools and workflows
-- Testing requirements
-- Code review processes
-- Architectural patterns
-
-## Using These Guardrails in Practice
-
-### The Simple Approach (Recommended)
-
-**Just ask Claude to guide you:**
-
-```markdown
-I'm working on [feature] for [project].
-
-Review the pm-coding-guardrails files and guide me through this coding session.
-```
-
-**That's it.** Claude will:
-- Read the relevant guardrail files
-- Tell you what to focus on first
-- Guide you through checkpoints
-- Remind you about quality gates before commits
-- Tell you when to restart sessions
-
-### Specific Scenarios (Advanced)
-
-If you want more control over what Claude focuses on, use these prompts:
-
-**Starting a team project:**
-```markdown
-I'm working on [feature] in a shared codebase with senior engineers.
-
-Context:
-- Review pm-who-codes.md (team project section)
-- Review quality-gates.md for commit standards
-- Match existing patterns exactly
-
-Help me find similar code to match, then break this into small tasks.
-```
-
-**Before committing:**
-```markdown
-Before I commit, let's verify using quality-gates.md:
-- Pattern matching
-- Formatters/linters
-- Tests written and passing
-- All CI checks passed locally
-
-Walk me through the checklist.
-```
-
-**Restarting after context rot:**
-```markdown
-Starting fresh session.
-
-Context:
-- Review session-management.md for approach
-- Read .claude/sessions/[date]-[feature].md from last session
-- Review pm-who-codes.md and quality-gates.md
-
-Confirm you understand where we left off, then continue.
-```
-
-**Solo project:**
-```markdown
-Working on my solo project [name].
-
-Context:
-- Review solo-project-standards.md
-- Review quality-gates.md
-
-Guide me through this session.
-```
-
-## Core Principles
-
-1. **Consistency > Personal Preference** - Match existing patterns exactly
-2. **CI Must Pass Locally First** - Never push code that fails checks
-3. **Quality > Speed** - Shipping sloppy code isn't shipping value
-4. **Test Before Ship** - Untested code is broken code
-5. **Know When to Ask** - Better to ask than create cleanup work
-6. **Prompt Changes Need Process** - Review prompt-engineering.md before modifying AI prompts
-7. **Discover Before Building** - Search for existing patterns before adding new code
-
-## Key Practices from Engineering Teams
-
-These guidelines incorporate best practices from experienced engineers working with AI:
-
-- **Tiny task breakdown** - Keep AI laser-focused on small, discrete tasks
-- **Frequent checkpoints** - Commit after every small task passes
-- **Context window management** - Restart sessions after 2-3 big tasks
-- **Documentation first** - Write markdown docs before coding
-- **Many-shot examples** - Initialize sessions with patterns to follow
+Fork this repo and adapt:
+- Add your own patterns to patterns/
+- Adjust quality gates for your team's tools
+- Extend the maturity model for your context
 
 ## Philosophy
 
-This isn't about being a perfect engineer. It's about being a responsible one.
+This isn't about being a perfect engineer or a perfect writer. It's about being a systematic one.
 
-The goal: Ship features that create value without creating work for others.
-
-## Integration Examples
-
-### Starting a New Feature
-
-```markdown
-I need to add user authentication to the dashboard.
-
-Context:
-- Match existing patterns in components/auth/
-- Follow quality-gates.md checklist
-- Break into small tasks per pm-who-codes.md
-- Commit after each task passes checks
-
-Let's start by reading similar components and breaking this down.
-```
-
-### Working in a Shared Codebase
-
-```markdown
-I'm a PM working in a codebase with senior engineers.
-
-Important:
-- Study similar code first, match patterns exactly (pm-who-codes.md)
-- Run all CI checks locally before committing (quality-gates.md)
-- Ask before deviating from established conventions
-- Commit frequently after small, working changes
-
-Let's ensure I don't create cleanup work for the team.
-```
+The goal: Ship quality work that compounds — where each session makes the next one better.
 
 ## Contributing
 
-Found these helpful? Have improvements? PRs welcome.
-
-## Acknowledgments
-
-These guidelines synthesize practices from experienced product managers and engineers:
-- Core philosophy developed through hands-on PM coding work
-- Best practices incorporate feedback from senior engineers working with AI
-- Checkpoint and session management strategies adapted from production engineering teams
+Found this helpful? Have improvements? PRs welcome.
 
 ## License
 
-CC BY-NC-SA 4.0 - Free to use for personal and internal business use with attribution.
+CC BY-NC-SA 4.0 — Free to use for personal and internal business use with attribution.
 
 ---
 
-Built for PMs who want to code responsibly with AI. Ship features with quality and intention.
+Built for PMs who want to work with AI systematically. Ship with quality and intention.
