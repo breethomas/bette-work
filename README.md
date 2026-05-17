@@ -1,10 +1,18 @@
-# bette-work
+# bette-work (archived)
 
 > "To fulfill a dream, to be allowed to sweat over lonely labor, to be given a chance to create, is the meat and potatoes of life." — Bette Davis
 
-Quality gates, session management, and working principles for AI-assisted work.
+**Archived 2026-05-17.** This repo is preserved as a historical snapshot of Bette's quality principles, coding standards, and session management thinking. Active maintenance has moved to the unified Bette plugin.
 
-**This repo is now part of [Bette](https://github.com/breethomas/bette).** Install the unified plugin to get all 57 skills including everything in this repo.
+## Where to find current thinking
+
+| Topic | Current canonical location |
+|---|---|
+| Core principles + maturity model | [`breethomas/bette/docs/core-principles.md`](https://github.com/breethomas/bette/blob/main/plugins/bette/docs/core-principles.md) |
+| Quality gates (PMs who code) | [`breethomas/bette/plugins/bette/skills/quality-gates/`](https://github.com/breethomas/bette/tree/main/plugins/bette/skills/quality-gates) |
+| Test-first (AI safety nets) | [`breethomas/bette/plugins/bette/skills/test-first/`](https://github.com/breethomas/bette/tree/main/plugins/bette/skills/test-first) |
+| Prompt engineering | [`breethomas/bette/plugins/bette/skills/prompt-engineering/`](https://github.com/breethomas/bette/tree/main/plugins/bette/skills/prompt-engineering) |
+| Session management | [`breethomas/bette/docs/core-principles.md`](https://github.com/breethomas/bette/blob/main/plugins/bette/docs/core-principles.md) (Session Management section) |
 
 ## Install Bette
 
@@ -13,19 +21,10 @@ Quality gates, session management, and working principles for AI-assisted work.
 /plugin install bette@breethomas
 ```
 
-## What's Here
-
-- **[core-principles.md](core-principles.md)** — Universal principles, the maturity model, and session management (compaction awareness, work-type restart heuristics)
-- **[coding/quality-gates.md](coding/quality-gates.md)** — Pre-commit checklist for PMs who code
-- **[coding/test-first.md](coding/test-first.md)** — AI-generated test suites as safety nets
-- **[coding/solo-projects.md](coding/solo-projects.md)** — Standards for solo projects
-- **[coding/prompt-engineering.md](coding/prompt-engineering.md)** — Production prompt optimization
-- **[patterns/](patterns/)** — Capture and reuse solved problems
-
 ## License
 
 CC BY-NC-SA 4.0
 
 ---
 
-*Part of the [Bette](https://github.com/breethomas/bette) system. Fasten your seatbelts.*
+*Historical snapshot. For current state, see [breethomas/bette](https://github.com/breethomas/bette).*
