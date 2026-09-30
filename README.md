@@ -8,6 +8,7 @@
 
 | Topic | Current canonical location |
 |---|---|
+| PM Who Codes principles (revised Sept 2026) | [`breethomas/bette/docs/coding/pm-who-codes.md`](https://github.com/breethomas/bette/blob/main/plugins/bette/docs/coding/pm-who-codes.md) |
 | Core principles + maturity model | [`breethomas/bette/docs/core-principles.md`](https://github.com/breethomas/bette/blob/main/plugins/bette/docs/core-principles.md) |
 | Quality gates (PMs who code) | [`breethomas/bette/plugins/bette/skills/quality-gates/`](https://github.com/breethomas/bette/tree/main/plugins/bette/skills/quality-gates) |
 | Test-first (AI safety nets) | [`breethomas/bette/plugins/bette/skills/test-first/`](https://github.com/breethomas/bette/tree/main/plugins/bette/skills/test-first) |
